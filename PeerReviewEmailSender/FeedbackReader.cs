@@ -47,8 +47,7 @@ namespace PeerReviewEmailSender
             public string Feedback { get; set; }
 
             public string ToFeedbackString =>
-                $"Előadás: {PresentationScore}\nMunka: {WorkScore}\nVisszajelzés:\n{Feedback}";
-
+                $"Előadás: {PresentationScore}{Environment.NewLine}<BR/>Munka: {WorkScore}{Environment.NewLine}{Environment.NewLine}<BR/>Visszajelzés:{Environment.NewLine}<BR/>{Feedback}";
         }
     }
 }

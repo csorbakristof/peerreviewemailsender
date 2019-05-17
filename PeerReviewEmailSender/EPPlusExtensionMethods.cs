@@ -11,7 +11,7 @@ namespace PeerReviewEmailSender
         public static IEnumerable<T> ConvertSheetToObjects<T>(this ExcelWorksheet worksheet) where T : new()
         {
 
-            Func<CustomAttributeData, bool> columnOnly = y => y.AttributeType == typeof(Column);
+            bool columnOnly(CustomAttributeData y) => y.AttributeType == typeof(Column);
 
             var columns = typeof(T)
                     .GetProperties()

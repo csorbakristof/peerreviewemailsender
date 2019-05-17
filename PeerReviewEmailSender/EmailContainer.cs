@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace PeerReviewEmailSender
@@ -23,9 +24,9 @@ namespace PeerReviewEmailSender
                 yield return e;
         }
 
-        const string messagePrefix = "Kedves Kolléga!\nA beszámolódra az alábbi visszejelzések érkeztek:\n\n";
+        string messagePrefix = $"Kedves Kolléga!<BR/><BR/>{Environment.NewLine}A beszámolódra az alábbi visszejelzések érkeztek:<BR/><BR/>{Environment.NewLine}{Environment.NewLine}";
 
-        const string feedbackSeparator = "\n\n----------\n\n";
+        const string feedbackSeparator = "<BR/><BR/>\n\n----------<BR/><BR/>\n\n";
 
         public string GetMessageBody(string presenterEmail)
         {
